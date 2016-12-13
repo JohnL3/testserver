@@ -22,13 +22,16 @@ drinkRouter.route('/')
         if (err) throw err;
         console.log('Drink created!');
         var id = drink._id;
-
-        res.writeHead(200, {
+	    //this is line i added thanks to jenvos ... sends back object and i can update webpage 
+	res.send(drink);
+      /* 
+      This sction i had to remove as I needed a object sent back this was used in coursea course
+      just to send a resposne back to postman showing post was successful
+      	res.writeHead(200, {
             'Content-Type': 'text/plain'
-        });
-		
+        });	
         res.end('Added the drink with id: ' + id);
-		//'Added the drink with id: ' + id
+		*/
     });
 })
 
